@@ -3329,7 +3329,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 32
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3769,7 +3769,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 27
-      m_TileSpriteIndex: 28
+      m_TileSpriteIndex: 30
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -4269,7 +4269,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 6
-      m_TileSpriteIndex: 6
+      m_TileSpriteIndex: 28
       m_TileMatrixIndex: 2
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -7960,8 +7960,8 @@ Tilemap:
   m_TileSpriteArray:
   - m_RefCount: 11
     m_Data: {fileID: 452692620, guid: 0409285cc2f149d4ea598dd64abf5623, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 5441223297315994465, guid: 0409285cc2f149d4ea598dd64abf5623, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 10
     m_Data: {fileID: -684107843, guid: 0409285cc2f149d4ea598dd64abf5623, type: 3}
   - m_RefCount: 76
@@ -7970,8 +7970,8 @@ Tilemap:
     m_Data: {fileID: 1847066705, guid: 0409285cc2f149d4ea598dd64abf5623, type: 3}
   - m_RefCount: 86
     m_Data: {fileID: -1078601316, guid: 0409285cc2f149d4ea598dd64abf5623, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 1476443656, guid: 0409285cc2f149d4ea598dd64abf5623, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 2
     m_Data: {fileID: -402720419, guid: 0409285cc2f149d4ea598dd64abf5623, type: 3}
   - m_RefCount: 4
@@ -8015,15 +8015,15 @@ Tilemap:
   - m_RefCount: 3
     m_Data: {fileID: -813528326, guid: 0409285cc2f149d4ea598dd64abf5623, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: -421241688, guid: 0409285cc2f149d4ea598dd64abf5623, type: 3}
+    m_Data: {fileID: 1476443656, guid: 0409285cc2f149d4ea598dd64abf5623, type: 3}
   - m_RefCount: 82
     m_Data: {fileID: -648835155, guid: 0409285cc2f149d4ea598dd64abf5623, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -421241688, guid: 0409285cc2f149d4ea598dd64abf5623, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1913208537, guid: 0409285cc2f149d4ea598dd64abf5623, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 5441223297315994465, guid: 0409285cc2f149d4ea598dd64abf5623, type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 228635277, guid: 0409285cc2f149d4ea598dd64abf5623, type: 3}
   - m_RefCount: 8
