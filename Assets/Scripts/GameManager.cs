@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;  // Necesario para cargar escenas
 
 public class GameManager : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class GameManager : MonoBehaviour
 
         if (lives <= 0)
         {
-            // Aquí puedes manejar el Game Over, por ejemplo, reiniciar el juego
+            // Cuando las vidas llegan a 0, se reinicia la escena
             GameOver();
         }
     }
@@ -28,7 +29,10 @@ public class GameManager : MonoBehaviour
     // Método de Game Over
     void GameOver()
     {
+        // Muestra el mensaje de Game Over
         Debug.Log("Game Over");
-        // Implementa la lógica de fin del juego (como mostrar un mensaje de Game Over)
+
+        // Reinicia la escena actual
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
