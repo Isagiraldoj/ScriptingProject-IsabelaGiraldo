@@ -65,13 +65,19 @@ public class PlayerController : MonoBehaviour
     // Método para manejar el salto
     void HandleJump()
     {
-        // Verificar si el jugador está tocando el suelo
+        // Verificar si el jugador está tocando el suelo usando Raycast y la capa Ground
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 0.1f, groundLayer);
 
+        // Para depuración, dibujar la línea del Raycast en la escena
+        Debug.DrawRay(transform.position, Vector2.down * 0.1f, Color.red);
+
         // Si está tocando el suelo y presiona la barra espaciadora, saltará
-        if (isGrounded && Keyboard.current.spaceKey.isPressed)
+        if (isGrounded && Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);  // Mantener la velocidad en X, cambiar solo la Y para el salto
+
+            // Rotar 180 grados para "colgarse de los pies"
+            transform.Rotate(0f, 180f, 0f); // Rota en el eje Y
         }
     }
 
