@@ -45,8 +45,21 @@ public class PlayerController : MonoBehaviour
             moveInput = 0f;  // Sin movimiento
         }
 
+        // Si la gravedad está invertida, cambiar la dirección del movimiento horizontal
+        if (isGravityInverted)
+        {
+            moveInput = -moveInput;  // Invertir el movimiento horizontal
+        }
+
         // Mover al jugador (usando el movimiento en el eje X)
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y); // Mantener la velocidad en Y (sin cambiarla)
+
+        // Rotar el personaje según la dirección del movimiento
+        if (moveInput != 0)
+        {
+            // Si el movimiento es a la izquierda, giramos el sprite para que mire hacia la izquierda, si es a la derecha, lo giramos a la derecha.
+            transform.localScale = new Vector3(Mathf.Sign(moveInput), transform.localScale.y, 1f);
+        }
     }
 
     // Método para manejar el salto
@@ -72,8 +85,27 @@ public class PlayerController : MonoBehaviour
             // Cambiar la dirección de la gravedad
             Physics2D.gravity = isGravityInverted ? new Vector2(0, -9.8f) : new Vector2(0, 9.8f);
 
-            // Alternar la dirección del sprite (si lo deseas)
-            transform.Rotate(0f, 0f, 180f);
+            // Ajustar la posición y escala del personaje dependiendo de la gravedad
+            AdjustCharacterPositionAndRotation();
+        }
+    }
+
+    // Método para ajustar la posición y la rotación del personaje dependiendo de la gravedad
+    void AdjustCharacterPositionAndRotation()
+    {
+        // Si la gravedad está invertida, invertir la escala del personaje
+        if (isGravityInverted)
+        {
+            transform.localScale = new Vector3(transform.localScale.x, -Mathf.Abs(transform.localScale.y), 1f);
+            // Ajustar la posición en el eje Y para que el personaje esté "pegado" al techo
+            rb.position = new Vector2(rb.position.x, rb.position.y + 0.5f);  // Ajuste de posición (según el tamaño del personaje)
+        }
+        else
+        {
+            // Restaurar la escala normal para el personaje
+            transform.localScale = new Vector3(transform.localScale.x, Mathf.Abs(transform.localScale.y), 1f);
+            // Ajustar la posición en el eje Y para que el personaje esté "pegado" al suelo
+            rb.position = new Vector2(rb.position.x, rb.position.y - 0.5f);  // Ajuste de posición (según el tamaño del personaje)
         }
     }
 }
